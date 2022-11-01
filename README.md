@@ -36,3 +36,5 @@ Zabava
 # Učestalost ažuriranja
 Najmanje jednom godišnje
 
+# Web stranica
+https://github.com/turkii98/Otvoreni-skup-podataka-za-serije
