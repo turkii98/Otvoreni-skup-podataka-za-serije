@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta author="Matija Turkalj">
+    <meta description="Ovdje se nalazi skup podataka za tv-serije na streaming platformama Netflix i HBO Plus. 
+    Podaci su dostupni u CSV i JSON formatu, a također je uključen i dump baze sa svim podacima u normaliziranom obliku. 
+    Ovi podaci biti će korisni svim ljubitelja tv-serija koji su pretplaćeni na neku od streaming usluga ili planiraju biti. ">
+
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="index.css">
+
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    
+    <script type="text/javascript" class="init">
+	
+
+
+
+	</script>
+    <script type="text/javascript" class="init">
+        table = $(document).ready( function () {
+            $('#table_id').DataTable();
+        } );
+
+        </script>
+    <title>Otvoreni skup podataka za serije</title>
+</head>
+
+
+
+
+
+
+<body>
+
+
+    
+    <div class = "naslov"><h1>Otvoreni-skup-podataka-za-serije</h1></div>
+    
+    <b>
+         Ovdje se nalazi skup podataka za tv-serije na streaming platformama Netflix i HBO Plus. 
+        Podaci su dostupni u CSV i JSON formatu, a također je uključen i dump baze sa svim podacima u normaliziranom obliku. 
+        Ovi podaci biti će korisni svim ljubitelja tv-serija koji su pretplaćeni na neku od streaming usluga ili planiraju biti. 
+    </b>
+    <div class = "naslov"><h1>Licenca - Creative Commons Zero v1.0 Universal</h1></div>
+    
+    <div class = "naslov"> <h1>Naziv Autora: Matija Turkalj</h1></div>
+    <div class = "naslov"> <h1>Verzija 2.0</h1></div>
+    <div class = "naslov"><h1>Jezik: hrvatski </h1> </div>
+    <div class = "naslov"> <h1> Datum ažuriranja podataka: 1.11.2022.</h1></div>
+    <div class = "naslov"><h1>Veličina podataka </h1> </div>
+
+        <h3>serijeSaStreamingPlatformi.csv  -  2  KB <br>
+        serijeSaStreamingPlatformi.json -  4  KB <br>
+        dump baze netflixhboor.sql      -  23 KB </h3>
+
+    <div class = "naslov"> <h1>Ključne riječi</h1> </div>
+    <h3> otvoreno, csv, json, serije, netflix, hbo </h3>
+    <div class = "naslov"> <h1>Kategorija</h1> </div>
+    <h3>zabava</h3>
+    <div class = "naslov"> <h1>Webstranica</h1> </div>
+     <a href="https://github.com/turkii98/Otvoreni-skup-podataka-za-serije">https://github.com/turkii98/Otvoreni-skup-podataka-za-serije</a> 
+    
+    
+    <script>
+     function callThis(){
+        alert("yay")
+    }
+    </script>
+    <br>
+    <br>
+    <button type="button" id= "testbutton" >Osvježi podatke</button>
+    <table id="table_id" class="display" width="100%">
+        <thead>
+            <tr>
+                <th>naziv</th>
+                <th>prvo_emitiranje</th>
+                <th>imdb ocjena</th>
+                <th>završeno</th>
+                <th>prosječno trajanje(min)</th>
+                <th>žanr</th>
+                <th>platforma</th>
+                <th>tematika</th>
+                <th>redatelj</th>
+                <th>glumci</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+                <th>naziv</th>
+                <th>prvo_emitiranje</th>
+                <th>imdb ocjena</th>
+                <th>završeno</th>
+                <th>prosječno trajanje(min)</th>
+                <th>žanr</th>
+                <th>platforma</th>
+                <th>tematika</th>
+                <th>redatelj</th>
+                <th>glumci</th>
+            
+        </tfoot>
+    </table>
+ <script>
+
+    $("#testbutton").click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: "http://localhost:8080/csv",
+            type: "GET",
+            success: function (dataa) {
+                //ovdje radi nekaj s tim dolaznim podacima
+                //alert(JSON.stringify(dataa))
+                var temp = JSON.stringify(dataa)
+                console.log(temp)
+                fill(temp)
+                console.log(dataa)
+
+            },
+            error: function (e) {
+                console.log("upsić");
+                console.log(e)
+                
+            },
+        });
+    });
+
+    
+    function fill(data) {
+        table = $(document).ready(function () {
+        $('#table_id').DataTable({
+        ajax: "http://localhost:8080/csv",
+        destroy: true
+    });
+});
+    }
+
+
+ </script>
+<a href="serijeSaStreamingPlatformi.csv" download="serijeSaStreamingPlatformi.csv"><button>Download CSV</button></a>
+<br>
+<a href="serijeSaStreamingPlatformi.json" download="serijeSaStreamingPlatformi.json"><button>Download JSON</button></a>
+</body>
+</html>

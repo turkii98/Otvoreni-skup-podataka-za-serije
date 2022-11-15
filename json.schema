@@ -1,0 +1,1017 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "default": [],
+    "title": "Otvoreni skup podataka za serije",
+    "items": {
+        "type": "object",
+        "title": "A Schema",
+        "required": [
+            "naziv",
+            "prvo_emitiranje",
+            "imdb_ocjena",
+            "završeno",
+            "prosjecno_trajanje",
+            "zanr",
+            "platforma",
+            "tematika",
+            "redatelj",
+            "glumci"
+        ],
+        "properties": {
+            "naziv": {
+                "type": "string",
+                "title": "naziv",
+                "examples": [
+                    "Breaking Bad",
+                    "Dahmer - Monster: The Jeffrey Dahmer Story",
+                    "Euphoria",
+                    "House of the Dragon",
+                    "How I Met Your Mother",
+                    "Lucifer",
+                    "Peacemaker",
+                    "Peaky Blinders",
+                    "Supernatural",
+                    "The Sandman"
+                ],
+                "description": "naziv serije"
+            },
+            "prvo_emitiranje": {
+                "type": "string",
+                "title": "prvo_emitiranje",
+                "examples": [
+                    "2008-01-20",
+                    "2022-09-21",
+                    "2019-06-16",
+                    "2022-08-21",
+                    "2005-09-19",
+                    "2016-01-25",
+                    "2022-01-13",
+                    "2013-09-12",
+                    "2005-09-13",
+                    "2022-05-08"
+                ],
+                "description": "datum emitiranja prve epizode"
+            },
+            "imdb_ocjena": {
+                "type": "string",
+                "title": "imdb_ocjena",
+                "examples": [
+                    "9.5",
+                    "8",
+                    "8.4",
+                    "8.6",
+                    "8.3",
+                    "8.1",
+                    "8.8"
+                ],
+                "description": "ocjena na imdb stranici"
+            },
+            "završeno": {
+                "type": "string",
+                "title": "završeno",
+                "examples": [
+                    "true",
+                    "false"
+                ],
+                "description": "je li završena serija"
+            },
+            "prosjecno_trajanje": {
+                "type": "string",
+                "title": "prosjecno_trajanje",
+                "examples": [
+                    "47",
+                    "57",
+                    "52",
+                    "61",
+                    "22",
+                    "44",
+                    "43",
+                    "67",
+                    "41",
+                    "60"
+                ],
+                "description": "prosječno trajanje epizode u minutama"
+            },
+            "zanr": {
+                "type": "string",
+                "title": "zanr",
+                "examples": [
+                    "drama",
+                    "triler",
+                    "komedija",
+                    "fantasy"
+                ],
+                "description": "žanr"
+            },
+            "platforma": {
+                "type": "string",
+                "title": "platforma",
+                "examples": [
+                    "netflix",
+                    "hbo"
+                ],
+                "description": "na kojoj streaming platformi je dostupna serija"
+            },
+            "tematika": {
+                "type": "string",
+                "title": "tematika",
+                "examples": [
+                    "ozbiljna",
+                    "vesela"
+                ],
+                "description": "tematika"
+            },
+            "redatelj": {
+                "type": "array",
+                "title": "redatelj",
+                "items": {
+                    "type": "object",
+                    "title": "A Schema",
+                    "required": [
+                        "ime",
+                        "prezime"
+                    ],
+                    "properties": {
+                        "ime": {
+                            "type": "string",
+                            "title": "The ime Schema",
+                            "examples": [
+                                "Vince",
+                                "Ryan",
+                                "Aubrey Graham",
+                                "Daphna",
+                                "Sam",
+                                "George",
+                                "Pamela",
+                                "Tom",
+                                "John",
+                                "Otto",
+                                "Eric",
+                                "Iain"
+                            ]
+                        },
+                        "prezime": {
+                            "type": "string",
+                            "title": "The prezime Schema",
+                            "examples": [
+                                "Gilligan",
+                                "Murphy",
+                                "Drake",
+                                "Levin",
+                                "Levinson",
+                                "R.R. Marin",
+                                "Fryman",
+                                "Kapinos",
+                                "H. Starke",
+                                "Bathurst",
+                                "Harper",
+                                "Kripke",
+                                "Smith"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "ime": "Vince",
+                        "prezime": "Gilligan"
+                    },
+                    {
+                        "ime": "Ryan",
+                        "prezime": "Murphy"
+                    },
+                    {
+                        "ime": "Aubrey Graham",
+                        "prezime": "Drake"
+                    },
+                    {
+                        "ime": "Daphna",
+                        "prezime": "Levin"
+                    },
+                    {
+                        "ime": "Sam",
+                        "prezime": "Levinson"
+                    },
+                    {
+                        "ime": "George",
+                        "prezime": "R.R. Marin"
+                    },
+                    {
+                        "ime": "Pamela",
+                        "prezime": "Fryman"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Kapinos"
+                    },
+                    {
+                        "ime": "John",
+                        "prezime": "H. Starke"
+                    },
+                    {
+                        "ime": "Otto",
+                        "prezime": "Bathurst"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Harper"
+                    },
+                    {
+                        "ime": "Eric",
+                        "prezime": "Kripke"
+                    },
+                    {
+                        "ime": "Iain",
+                        "prezime": "Smith"
+                    }]
+                },
+                "examples": [
+                    [{
+                        "ime": "Vince",
+                        "prezime": "Gilligan"
+                    }],
+                    [{
+                        "ime": "Ryan",
+                        "prezime": "Murphy"
+                    }],
+                    [{
+                        "ime": "Aubrey Graham",
+                        "prezime": "Drake"
+                    },
+                    {
+                        "ime": "Daphna",
+                        "prezime": "Levin"
+                    },
+                    {
+                        "ime": "Sam",
+                        "prezime": "Levinson"
+                    }],
+                    [{
+                        "ime": "George",
+                        "prezime": "R.R. Marin"
+                    }],
+                    [{
+                        "ime": "Pamela",
+                        "prezime": "Fryman"
+                    }],
+                    [{
+                        "ime": "Tom",
+                        "prezime": "Kapinos"
+                    }],
+                    [{
+                        "ime": "John",
+                        "prezime": "H. Starke"
+                    }],
+                    [{
+                        "ime": "Otto",
+                        "prezime": "Bathurst"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Harper"
+                    }],
+                    [{
+                        "ime": "Eric",
+                        "prezime": "Kripke"
+                    }],
+                    [{
+                        "ime": "Iain",
+                        "prezime": "Smith"
+                    }]
+                ],
+                "description": "redatelji"
+            },
+            "glumci": {
+                "type": "array",
+                "title": "glumci",
+                "items": {
+                    "type": "object",
+                    "title": "A Schema",
+                    "required": [
+                        "ime",
+                        "prezime"
+                    ],
+                    "properties": {
+                        "ime": {
+                            "type": "string",
+                            "title": "The ime Schema",
+                            "examples": [
+                                "Aaron",
+                                "Brian",
+                                "Evan",
+                                "Hunter",
+                                "Jacob",
+                                "Maree Stoermer Coleman",
+                                "Matt",
+                                "Milly",
+                                "Alyson",
+                                "Cobie",
+                                "Jason",
+                                "Josh",
+                                "Neil",
+                                "Lauren",
+                                "Tom",
+                                "Jennifer",
+                                "John",
+                                "Cillian",
+                                "Jared",
+                                "Jenses",
+                                "Jenna"
+                            ]
+                        },
+                        "prezime": {
+                            "type": "string",
+                            "title": "The prezime Schema",
+                            "examples": [
+                                "Paul",
+                                "Cranston",
+                                "Peters",
+                                "Schafer",
+                                "Elordi",
+                                "Zendaya",
+                                "Smith",
+                                "Alcock",
+                                "Hannigan",
+                                "Smoulders",
+                                "Segel",
+                                "Radnor",
+                                "Patrick Harris",
+                                "German",
+                                "Ellis",
+                                "Holland",
+                                "Cena",
+                                "Murphy",
+                                "Padalecki",
+                                "Ackles",
+                                "Coleman",
+                                "Sturridge"
+                            ]
+                        }
+                    },
+                    "examples": [{
+                        "ime": "Aaron",
+                        "prezime": "Paul"
+                    },
+                    {
+                        "ime": "Brian",
+                        "prezime": "Cranston"
+                    },
+                    {
+                        "ime": "Evan",
+                        "prezime": "Peters"
+                    },
+                    {
+                        "ime": "Hunter",
+                        "prezime": "Schafer"
+                    },
+                    {
+                        "ime": "Jacob",
+                        "prezime": "Elordi"
+                    },
+                    {
+                        "ime": "Maree Stoermer Coleman",
+                        "prezime": "Zendaya"
+                    },
+                    {
+                        "ime": "Matt",
+                        "prezime": "Smith"
+                    },
+                    {
+                        "ime": "Milly",
+                        "prezime": "Alcock"
+                    },
+                    {
+                        "ime": "Alyson",
+                        "prezime": "Hannigan"
+                    },
+                    {
+                        "ime": "Cobie",
+                        "prezime": "Smoulders"
+                    },
+                    {
+                        "ime": "Jason",
+                        "prezime": "Segel"
+                    },
+                    {
+                        "ime": "Josh",
+                        "prezime": "Radnor"
+                    },
+                    {
+                        "ime": "Neil",
+                        "prezime": "Patrick Harris"
+                    },
+                    {
+                        "ime": "Lauren",
+                        "prezime": "German"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Ellis"
+                    },
+                    {
+                        "ime": "Jennifer",
+                        "prezime": "Holland"
+                    },
+                    {
+                        "ime": "John",
+                        "prezime": "Cena"
+                    },
+                    {
+                        "ime": "Cillian",
+                        "prezime": "Murphy"
+                    },
+                    {
+                        "ime": "Jared",
+                        "prezime": "Padalecki"
+                    },
+                    {
+                        "ime": "Jenses",
+                        "prezime": "Ackles"
+                    },
+                    {
+                        "ime": "Jenna",
+                        "prezime": "Coleman"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Sturridge"
+                    }]
+                },
+                "examples": [
+                    [{
+                        "ime": "Aaron",
+                        "prezime": "Paul"
+                    },
+                    {
+                        "ime": "Brian",
+                        "prezime": "Cranston"
+                    }],
+                    [{
+                        "ime": "Evan",
+                        "prezime": "Peters"
+                    }],
+                    [{
+                        "ime": "Hunter",
+                        "prezime": "Schafer"
+                    },
+                    {
+                        "ime": "Jacob",
+                        "prezime": "Elordi"
+                    },
+                    {
+                        "ime": "Maree Stoermer Coleman",
+                        "prezime": "Zendaya"
+                    }],
+                    [{
+                        "ime": "Matt",
+                        "prezime": "Smith"
+                    },
+                    {
+                        "ime": "Milly",
+                        "prezime": "Alcock"
+                    }],
+                    [{
+                        "ime": "Alyson",
+                        "prezime": "Hannigan"
+                    },
+                    {
+                        "ime": "Cobie",
+                        "prezime": "Smoulders"
+                    },
+                    {
+                        "ime": "Jason",
+                        "prezime": "Segel"
+                    },
+                    {
+                        "ime": "Josh",
+                        "prezime": "Radnor"
+                    },
+                    {
+                        "ime": "Neil",
+                        "prezime": "Patrick Harris"
+                    }],
+                    [{
+                        "ime": "Lauren",
+                        "prezime": "German"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Ellis"
+                    }],
+                    [{
+                        "ime": "Jennifer",
+                        "prezime": "Holland"
+                    },
+                    {
+                        "ime": "John",
+                        "prezime": "Cena"
+                    }],
+                    [{
+                        "ime": "Cillian",
+                        "prezime": "Murphy"
+                    }],
+                    [{
+                        "ime": "Jared",
+                        "prezime": "Padalecki"
+                    },
+                    {
+                        "ime": "Jenses",
+                        "prezime": "Ackles"
+                    }],
+                    [{
+                        "ime": "Jenna",
+                        "prezime": "Coleman"
+                    },
+                    {
+                        "ime": "Tom",
+                        "prezime": "Sturridge"
+                    }]
+                ],
+                "description": "popis glavnih glumaca"
+            }
+        },
+        "examples": [{
+            "naziv": "Breaking Bad",
+            "prvo_emitiranje": "2008-01-20",
+            "imdb_ocjena": "9.5",
+            "završeno": "true",
+            "prosjecno_trajanje": "47",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Vince",
+                "prezime": "Gilligan"
+            }],
+            "glumci": [{
+                "ime": "Aaron",
+                "prezime": "Paul"
+            },
+            {
+                "ime": "Brian",
+                "prezime": "Cranston"
+            }]
+        },
+        {
+            "naziv": "Dahmer - Monster: The Jeffrey Dahmer Story",
+            "prvo_emitiranje": "2022-09-21",
+            "imdb_ocjena": "8",
+            "završeno": "true",
+            "prosjecno_trajanje": "57",
+            "zanr": "triler",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Ryan",
+                "prezime": "Murphy"
+            }],
+            "glumci": [{
+                "ime": "Evan",
+                "prezime": "Peters"
+            }]
+        },
+        {
+            "naziv": "Euphoria",
+            "prvo_emitiranje": "2019-06-16",
+            "imdb_ocjena": "8.4",
+            "završeno": "false",
+            "prosjecno_trajanje": "52",
+            "zanr": "drama",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Aubrey Graham",
+                "prezime": "Drake"
+            },
+            {
+                "ime": "Daphna",
+                "prezime": "Levin"
+            },
+            {
+                "ime": "Sam",
+                "prezime": "Levinson"
+            }],
+            "glumci": [{
+                "ime": "Hunter",
+                "prezime": "Schafer"
+            },
+            {
+                "ime": "Jacob",
+                "prezime": "Elordi"
+            },
+            {
+                "ime": "Maree Stoermer Coleman",
+                "prezime": "Zendaya"
+            }]
+        },
+        {
+            "naziv": "House of the Dragon",
+            "prvo_emitiranje": "2022-08-21",
+            "imdb_ocjena": "8.6",
+            "završeno": "false",
+            "prosjecno_trajanje": "61",
+            "zanr": "drama",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "George",
+                "prezime": "R.R. Marin"
+            }],
+            "glumci": [{
+                "ime": "Matt",
+                "prezime": "Smith"
+            },
+            {
+                "ime": "Milly",
+                "prezime": "Alcock"
+            }]
+        },
+        {
+            "naziv": "How I Met Your Mother",
+            "prvo_emitiranje": "2005-09-19",
+            "imdb_ocjena": "8.3",
+            "završeno": "true",
+            "prosjecno_trajanje": "22",
+            "zanr": "komedija",
+            "platforma": "hbo",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "Pamela",
+                "prezime": "Fryman"
+            }],
+            "glumci": [{
+                "ime": "Alyson",
+                "prezime": "Hannigan"
+            },
+            {
+                "ime": "Cobie",
+                "prezime": "Smoulders"
+            },
+            {
+                "ime": "Jason",
+                "prezime": "Segel"
+            },
+            {
+                "ime": "Josh",
+                "prezime": "Radnor"
+            },
+            {
+                "ime": "Neil",
+                "prezime": "Patrick Harris"
+            }]
+        },
+        {
+            "naziv": "Lucifer",
+            "prvo_emitiranje": "2016-01-25",
+            "imdb_ocjena": "8.1",
+            "završeno": "true",
+            "prosjecno_trajanje": "44",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "Tom",
+                "prezime": "Kapinos"
+            }],
+            "glumci": [{
+                "ime": "Lauren",
+                "prezime": "German"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Ellis"
+            }]
+        },
+        {
+            "naziv": "Peacemaker",
+            "prvo_emitiranje": "2022-01-13",
+            "imdb_ocjena": "8.3",
+            "završeno": "false",
+            "prosjecno_trajanje": "43",
+            "zanr": "komedija",
+            "platforma": "hbo",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "John",
+                "prezime": "H. Starke"
+            }],
+            "glumci": [{
+                "ime": "Jennifer",
+                "prezime": "Holland"
+            },
+            {
+                "ime": "John",
+                "prezime": "Cena"
+            }]
+        },
+        {
+            "naziv": "Peaky Blinders",
+            "prvo_emitiranje": "2013-09-12",
+            "imdb_ocjena": "8.8",
+            "završeno": "true",
+            "prosjecno_trajanje": "67",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Otto",
+                "prezime": "Bathurst"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Harper"
+            }],
+            "glumci": [{
+                "ime": "Cillian",
+                "prezime": "Murphy"
+            }]
+        },
+        {
+            "naziv": "Supernatural",
+            "prvo_emitiranje": "2005-09-13",
+            "imdb_ocjena": "8.4",
+            "završeno": "true",
+            "prosjecno_trajanje": "41",
+            "zanr": "fantasy",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Eric",
+                "prezime": "Kripke"
+            }],
+            "glumci": [{
+                "ime": "Jared",
+                "prezime": "Padalecki"
+            },
+            {
+                "ime": "Jenses",
+                "prezime": "Ackles"
+            }]
+        },
+        {
+            "naziv": "The Sandman",
+            "prvo_emitiranje": "2022-05-08",
+            "imdb_ocjena": "8.4",
+            "završeno": "false",
+            "prosjecno_trajanje": "60",
+            "zanr": "fantasy",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Iain",
+                "prezime": "Smith"
+            }],
+            "glumci": [{
+                "ime": "Jenna",
+                "prezime": "Coleman"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Sturridge"
+            }]
+        }]
+    },
+    "examples": [
+        [{
+            "naziv": "Breaking Bad",
+            "prvo_emitiranje": "2008-01-20",
+            "imdb_ocjena": "9.5",
+            "završeno": "true",
+            "prosjecno_trajanje": "47",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Vince",
+                "prezime": "Gilligan"
+            }],
+            "glumci": [{
+                "ime": "Aaron",
+                "prezime": "Paul"
+            },
+            {
+                "ime": "Brian",
+                "prezime": "Cranston"
+            }]
+        },
+        {
+            "naziv": "Dahmer - Monster: The Jeffrey Dahmer Story",
+            "prvo_emitiranje": "2022-09-21",
+            "imdb_ocjena": "8",
+            "završeno": "true",
+            "prosjecno_trajanje": "57",
+            "zanr": "triler",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Ryan",
+                "prezime": "Murphy"
+            }],
+            "glumci": [{
+                "ime": "Evan",
+                "prezime": "Peters"
+            }]
+        },
+        {
+            "naziv": "Euphoria",
+            "prvo_emitiranje": "2019-06-16",
+            "imdb_ocjena": "8.4",
+            "završeno": "false",
+            "prosjecno_trajanje": "52",
+            "zanr": "drama",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Aubrey Graham",
+                "prezime": "Drake"
+            },
+            {
+                "ime": "Daphna",
+                "prezime": "Levin"
+            },
+            {
+                "ime": "Sam",
+                "prezime": "Levinson"
+            }],
+            "glumci": [{
+                "ime": "Hunter",
+                "prezime": "Schafer"
+            },
+            {
+                "ime": "Jacob",
+                "prezime": "Elordi"
+            },
+            {
+                "ime": "Maree Stoermer Coleman",
+                "prezime": "Zendaya"
+            }]
+        },
+        {
+            "naziv": "House of the Dragon",
+            "prvo_emitiranje": "2022-08-21",
+            "imdb_ocjena": "8.6",
+            "završeno": "false",
+            "prosjecno_trajanje": "61",
+            "zanr": "drama",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "George",
+                "prezime": "R.R. Marin"
+            }],
+            "glumci": [{
+                "ime": "Matt",
+                "prezime": "Smith"
+            },
+            {
+                "ime": "Milly",
+                "prezime": "Alcock"
+            }]
+        },
+        {
+            "naziv": "How I Met Your Mother",
+            "prvo_emitiranje": "2005-09-19",
+            "imdb_ocjena": "8.3",
+            "završeno": "true",
+            "prosjecno_trajanje": "22",
+            "zanr": "komedija",
+            "platforma": "hbo",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "Pamela",
+                "prezime": "Fryman"
+            }],
+            "glumci": [{
+                "ime": "Alyson",
+                "prezime": "Hannigan"
+            },
+            {
+                "ime": "Cobie",
+                "prezime": "Smoulders"
+            },
+            {
+                "ime": "Jason",
+                "prezime": "Segel"
+            },
+            {
+                "ime": "Josh",
+                "prezime": "Radnor"
+            },
+            {
+                "ime": "Neil",
+                "prezime": "Patrick Harris"
+            }]
+        },
+        {
+            "naziv": "Lucifer",
+            "prvo_emitiranje": "2016-01-25",
+            "imdb_ocjena": "8.1",
+            "završeno": "true",
+            "prosjecno_trajanje": "44",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "Tom",
+                "prezime": "Kapinos"
+            }],
+            "glumci": [{
+                "ime": "Lauren",
+                "prezime": "German"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Ellis"
+            }]
+        },
+        {
+            "naziv": "Peacemaker",
+            "prvo_emitiranje": "2022-01-13",
+            "imdb_ocjena": "8.3",
+            "završeno": "false",
+            "prosjecno_trajanje": "43",
+            "zanr": "komedija",
+            "platforma": "hbo",
+            "tematika": "vesela",
+            "redatelj": [{
+                "ime": "John",
+                "prezime": "H. Starke"
+            }],
+            "glumci": [{
+                "ime": "Jennifer",
+                "prezime": "Holland"
+            },
+            {
+                "ime": "John",
+                "prezime": "Cena"
+            }]
+        },
+        {
+            "naziv": "Peaky Blinders",
+            "prvo_emitiranje": "2013-09-12",
+            "imdb_ocjena": "8.8",
+            "završeno": "true",
+            "prosjecno_trajanje": "67",
+            "zanr": "drama",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Otto",
+                "prezime": "Bathurst"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Harper"
+            }],
+            "glumci": [{
+                "ime": "Cillian",
+                "prezime": "Murphy"
+            }]
+        },
+        {
+            "naziv": "Supernatural",
+            "prvo_emitiranje": "2005-09-13",
+            "imdb_ocjena": "8.4",
+            "završeno": "true",
+            "prosjecno_trajanje": "41",
+            "zanr": "fantasy",
+            "platforma": "hbo",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Eric",
+                "prezime": "Kripke"
+            }],
+            "glumci": [{
+                "ime": "Jared",
+                "prezime": "Padalecki"
+            },
+            {
+                "ime": "Jenses",
+                "prezime": "Ackles"
+            }]
+        },
+        {
+            "naziv": "The Sandman",
+            "prvo_emitiranje": "2022-05-08",
+            "imdb_ocjena": "8.4",
+            "završeno": "false",
+            "prosjecno_trajanje": "60",
+            "zanr": "fantasy",
+            "platforma": "netflix",
+            "tematika": "ozbiljna",
+            "redatelj": [{
+                "ime": "Iain",
+                "prezime": "Smith"
+            }],
+            "glumci": [{
+                "ime": "Jenna",
+                "prezime": "Coleman"
+            },
+            {
+                "ime": "Tom",
+                "prezime": "Sturridge"
+            }]
+        }]
+    ],
+    "description": "Skup serija na streaming platformama Netflix i HBO"
+}

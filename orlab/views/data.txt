@@ -1,0 +1,102 @@
+[
+    {
+        "naziv": "Breaking Bad",
+        "prvo_emitiranje": "2008-01-20",
+        "imdb_ocjena": "9.5",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "47",
+        "zanr": "drama",
+        "platforma": "netflix",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "Dahmer - Monster: The Jeffrey Dahmer Story",
+        "prvo_emitiranje": "2022-09-21",
+        "imdb_ocjena": "8",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "57",
+        "zanr": "triler",
+        "platforma": "netflix",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "Euphoria",
+        "prvo_emitiranje": "2019-06-16",
+        "imdb_ocjena": "8.4",
+        "zavrseno": "false",
+        "prosjecno_trajanje": "52",
+        "zanr": "drama",
+        "platforma": "hbo",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "House of the Dragon",
+        "prvo_emitiranje": "2022-08-21",
+        "imdb_ocjena": "8.6",
+        "zavrseno": "false",
+        "prosjecno_trajanje": "61",
+        "zanr": "drama",
+        "platforma": "hbo",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "How I Met Your Mother",
+        "prvo_emitiranje": "2005-09-19",
+        "imdb_ocjena": "8.3",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "22",
+        "zanr": "komedija",
+        "platforma": "hbo",
+        "tematika": "vesela"
+    },
+    {
+        "naziv": "Lucifer",
+        "prvo_emitiranje": "2016-01-25",
+        "imdb_ocjena": "8.1",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "44",
+        "zanr": "drama",
+        "platforma": "netflix",
+        "tematika": "vesela"
+    },
+    {
+        "naziv": "Peacemaker",
+        "prvo_emitiranje": "2022-01-13",
+        "imdb_ocjena": "8.3",
+        "zavrseno": "false",
+        "prosjecno_trajanje": "43",
+        "zanr": "komedija",
+        "platforma": "hbo",
+        "tematika": "vesela"
+    },
+    {
+        "naziv": "Peaky Blinders",
+        "prvo_emitiranje": "2013-09-12",
+        "imdb_ocjena": "8.8",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "67",
+        "zanr": "drama",
+        "platforma": "netflix",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "Supernatural",
+        "prvo_emitiranje": "2005-09-13",
+        "imdb_ocjena": "8.4",
+        "zavrseno": "true",
+        "prosjecno_trajanje": "41",
+        "zanr": "fantasy",
+        "platforma": "hbo",
+        "tematika": "ozbiljna"
+    },
+    {
+        "naziv": "The Sandman",
+        "prvo_emitiranje": "2022-05-08",
+        "imdb_ocjena": "8.4",
+        "zavrseno": "false",
+        "prosjecno_trajanje": "60",
+        "zanr": "fantasy",
+        "platforma": "netflix",
+        "tematika": "ozbiljna"
+    }
+]

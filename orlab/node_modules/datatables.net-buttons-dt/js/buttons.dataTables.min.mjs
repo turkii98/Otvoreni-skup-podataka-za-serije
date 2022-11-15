@@ -1,0 +1,4 @@
+/*! DataTables styling wrapper for Buttons
+ * ©2018 SpryMedia Ltd - datatables.net/license
+ */
+import $ from"jquery";import DataTable from"datatables.net-dt";import"datatables.net-buttons";!function(a){"function"==typeof define&&define.amd?define(["jquery","datatables.net-dt","datatables.net-buttons"],function(t){return a(t,window,document)}):"object"==typeof exports?module.exports=function(t,e){return t=t||window,(e=e&&e.fn.dataTable?e:require("datatables.net-dt")(t,e).$).fn.dataTable.Buttons||require("datatables.net-buttons")(t,e),a(e,0,t.document)}:a(jQuery,window,document)}(function(t,e,a,n){return t.fn.dataTable});export default DataTable;
