@@ -1,0 +1,388 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "description" : "API za informacije o serijama na streaming platformama Netflix i HBO",
+    "version" : "1.0.0",
+    "title" : "Streaming Platforms API",
+    "contact" : {
+      "email" : "matija.turkalj@fer.hr"
+    },
+    "license" : {
+      "name" : "Creative Commons Zero v1.0 Universal",
+      "url" : "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  },
+  "paths" : {
+    "/series" : {
+      "get" : {
+        "summary" : "get data on all series",
+        "description" : "Fetches all data in csv\n",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched all the series",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/serija"
+                  }
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "add new series",
+        "description" : "Posts new series data\n",
+        "responses" : {
+          "201" : {
+            "description" : "Series Added Successfully"
+          },
+          "400" : {
+            "description" : "Bad Request"
+          },
+          "409" : {
+            "description" : "Such series already exists"
+          }
+        },
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/serija"
+              }
+            }
+          },
+          "description" : "Series information needed"
+        }
+      }
+    },
+    "/series/{name}" : {
+      "get" : {
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "name",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true,
+          "description" : "name of the tv show"
+        } ],
+        "summary" : "get information on single series",
+        "description" : "Fetches data for a specific tv show\n",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched data on wanted series",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "items" : {
+                    "$ref" : "#/components/schemas/serija"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "There is no such series"
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      },
+      "put" : {
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "name",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true,
+          "description" : "name of the tv show"
+        } ],
+        "summary" : "updates single series",
+        "description" : "Updates tables for a specific series\n",
+        "responses" : {
+          "200" : {
+            "description" : "Series updated",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Could not find such series"
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      },
+      "delete" : {
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "name",
+          "schema" : {
+            "type" : "string"
+          },
+          "required" : true,
+          "description" : "name of the tv show"
+        } ],
+        "summary" : "deletes single series",
+        "description" : "Updates tables for a specific series\n",
+        "responses" : {
+          "202" : {
+            "description" : "Series deleted successfully",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Could not find such series"
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      }
+    },
+    "/genre" : {
+      "get" : {
+        "summary" : "get information on genres",
+        "description" : "Fetches data for all possible genres\n",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched genres",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "items" : {
+                    "$ref" : "#/components/schemas/zanr"
+                  }
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      }
+    },
+    "/genre/{name}" : {
+      "parameters" : [ {
+        "in" : "path",
+        "name" : "name",
+        "schema" : {
+          "type" : "string"
+        },
+        "required" : true,
+        "description" : "name of the tv show"
+      } ],
+      "get" : {
+        "summary" : "get series of a genre",
+        "description" : "Fetches data for all series of a specific genre\n",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched series of wanted genre",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "items" : {
+                    "$ref" : "#/components/schemas/zanr"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "No such genre"
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      }
+    },
+    "/theme" : {
+      "get" : {
+        "summary" : "get themes",
+        "description" : "Fetches data for all possible themes\n",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched themes",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "items" : {
+                    "$ref" : "#/components/schemas/tematika"
+                  }
+                }
+              }
+            }
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "glumci" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "ime" : {
+            "type" : "string",
+            "example" : "Ivan"
+          },
+          "prezime" : {
+            "type" : "string",
+            "example" : "Horvat"
+          }
+        }
+      },
+      "redatelji" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "ime" : {
+            "type" : "string",
+            "example" : "Ivan"
+          },
+          "prezime" : {
+            "type" : "string",
+            "example" : "Horvat"
+          },
+          "serija_id" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "glumci_u_seriji" : {
+        "required" : [ "name" ],
+        "properties" : {
+          "glumac_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "serija_id" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        },
+        "type" : "object"
+      },
+      "serija" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "naziv" : {
+            "type" : "string",
+            "example" : "The Witcher"
+          },
+          "prvo_emitiranje" : {
+            "type" : "object",
+            "example" : "1-1-2000"
+          },
+          "imdb_ocjena" : {
+            "type" : "number",
+            "example" : 6.9
+          },
+          "završeno" : {
+            "type" : "boolean",
+            "example" : true
+          },
+          "prosječno_trajanje" : {
+            "type" : "integer",
+            "example" : 12
+          },
+          "zanr_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "platforma_id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "tematika_id" : {
+            "type" : "integer",
+            "example" : 1
+          }
+        }
+      },
+      "streamingplatforme" : {
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "naziv" : {
+            "type" : "string",
+            "example" : "HBO"
+          }
+        },
+        "type" : "object"
+      },
+      "tematika" : {
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "naziv" : {
+            "type" : "string",
+            "example" : "HBO"
+          }
+        },
+        "type" : "object"
+      },
+      "zanr" : {
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "example" : 1
+          },
+          "naziv" : {
+            "type" : "string",
+            "example" : "HBO"
+          }
+        },
+        "type" : "object"
+      }
+    }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/turkii98/Streaming_Platforms_Data/1.0.0"
+  } ]
+}
