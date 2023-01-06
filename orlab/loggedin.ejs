@@ -38,9 +38,11 @@
 <body>
 
 
-    <a class="mp" href="/profile">Profile</a>
+    <a class="mp" href="/profile">Korisnički profil</a>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a class="logout" href="/logout">Logout</a>
+    <a class="logout" href="/logout">Odjava</a>
+    <h1></h1>
+    <a id="op" href="">Osvježi Preslike</a> 
     <div class = "naslov"><h1>Otvoreni-skup-podataka-za-serije</h1></div>
     
     <b>
@@ -111,7 +113,7 @@
     $("#testbutton").click(function(event) {
         event.preventDefault();
         $.ajax({
-            url: "http://localhost:8080/csv",
+            url: "http://localhost:8080/json",
             type: "GET",
             success: function (dataa) {
                 //ovdje radi nekaj s tim dolaznim podacima
@@ -130,11 +132,51 @@
         });
     });
 
+    $("#op").click(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: "http://localhost:8080/json",
+            type: "GET",
+            success: function (dataa) {
+                //ovdje radi nekaj s tim dolaznim podacima
+                //alert(JSON.stringify(dataa))
+                fetch("http://localhost:8080/json")
+                    .then(response => response.blob())
+                    .then(blob => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "serijeSaStreamingPlatformi.json";
+                    link.click();
+                })
+                .catch(console.error);
+
+                fetch("http://localhost:8080/series")
+                    .then(response => response.blob())
+                    .then(blob => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "serijeSaStreamingPlatformi.csv";
+                    link.click();
+                })
+                .catch(console.error);
+                //aaaaa
+                var temp = JSON.stringify(dataa)
+                console.log(temp)
+
+            },
+            error: function (e) {
+                console.log("upsić");
+                console.log(e)
+                
+            },
+        });
+    });
+
     
     function fill(data) {
         table = $(document).ready(function () {
         $('#table_id').DataTable({
-        ajax: "http://localhost:8080/csv",
+        ajax: "http://localhost:8080/seriescsv",
         destroy: true
     });
 });

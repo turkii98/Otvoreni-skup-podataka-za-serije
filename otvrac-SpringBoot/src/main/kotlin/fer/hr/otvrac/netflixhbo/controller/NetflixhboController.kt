@@ -52,6 +52,11 @@ class NetflixhboController(
     fun getCsv():ResponseEntity<ResponseWrap<MutableMap<String, MutableList<MutableList<String>>>>> {
         return ResponseEntity(ResponseWrap("OK","Fetched all the series",netflixhboRepo.returnCsv()), HttpStatus.OK)
     }
+    @GetMapping("/seriescsv")
+    @ResponseBody
+    fun getCsvv():ResponseEntity<MutableMap<String, MutableList<MutableList<String>>>> {
+        return ResponseEntity(netflixhboRepo.returnCsv(), HttpStatus.OK)
+    }
 
     @GetMapping("/api")
     @ResponseBody
