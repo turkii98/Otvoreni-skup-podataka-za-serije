@@ -104,10 +104,10 @@ class NetflixhboController(
     fun updateSeries(@RequestBody req: SerijaUpdateDTO , @PathVariable("name" ) name: String):ResponseEntity<ResponseWrap<String>> {
         var serija= netflixhboRepo.returnCsvFilter(name)
         //println(serija)
-        if(serija["data"]!!.isEmpty()) return ResponseEntity(ResponseWrap("OK", "Series Updated", "null"),HttpStatus.OK)
+        if(serija["data"]!!.isEmpty()) return ResponseEntity(ResponseWrap("Not Found", "Could not find such series", "null"),HttpStatus.NOT_FOUND)
         println(serija["data"]!![0])
         netflixhboRepo.updateSeries(req, name)
-        return ResponseEntity(ResponseWrap("Not Found", "Could not find such series", "null"),HttpStatus.NOT_FOUND)
+        return ResponseEntity(ResponseWrap("OK", "Series Updated", "null"),HttpStatus.OK)
     }
 
 

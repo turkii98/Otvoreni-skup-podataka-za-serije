@@ -1,0 +1,24 @@
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta author="Matija Turkalj">
+    <meta description="Ovdje se nalazi skup podataka za tv-serije na streaming platformama Netflix i HBO Plus. 
+    Podaci su dostupni u CSV i JSON formatu, a također je uključen i dump baze sa svim podacima u normaliziranom obliku. 
+    Ovi podaci biti će korisni svim ljubitelja tv-serija koji su pretplaćeni na neku od streaming usluga ili planiraju biti. ">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <a class="mp" href="/">Back to main page</a>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a class="logout" href="/logout">Logout</a>
+    <h1 class="naslov">Welcome <%= user.nickname %></h1>
+
+    <% if (user.picture) { %>
+        <img class="block py-3" src="<%= user.picture %>" width="300">
+    <% } %>
+    
+    <pre class="block bg-gray-300 p-4 text-sm overflow-scroll"><%= userProfile %></pre>
+</body>
