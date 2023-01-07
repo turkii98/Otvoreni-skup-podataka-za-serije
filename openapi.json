@@ -13,6 +13,35 @@
     }
   },
   "paths" : {
+    "/json" : {
+      "get" : {
+        "summary" : "get series in json format",
+        "description" : "Fetches data for all series in json format\n",
+        "@context": "http://schema.org",
+        "@type": "Serija",
+        "responses" : {
+          "200" : {
+            "description" : "Fetched series",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "items" : {
+                    "$ref" : "#/components/schemas/serija"
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "No such series"
+          },
+          "501" : {
+            "description" : "Not yet implemented"
+          }
+        }
+      }
+    },
     "/series" : {
       "get" : {
         "summary" : "get data on all series",
