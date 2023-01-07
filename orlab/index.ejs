@@ -39,6 +39,8 @@
 
 
     <a class="logout" href="/login">Prijava</a>
+    <h1></h1>
+    <a id="op" href="">Osvježi Preslike</a> 
     <div class = "naslov"><h1>Otvoreni-skup-podataka-za-serije</h1></div>
     
     <b>
@@ -109,7 +111,7 @@
     $("#testbutton").click(function(event) {
         event.preventDefault();
         $.ajax({
-            url: "http://localhost:8080/csv",
+            url: "http://localhost:8080/seriescsv",
             type: "GET",
             success: function (dataa) {
                 //ovdje radi nekaj s tim dolaznim podacima
@@ -128,11 +130,37 @@
         });
     });
 
+
+    $("#op").click(function(event) {
+        event.preventDefault();
+        alert("Morate se prvo prijaviti")
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     function fill(data) {
         table = $(document).ready(function () {
         $('#table_id').DataTable({
-        ajax: "http://localhost:8080/csv",
+        ajax: "http://localhost:8080/seriescsv",
         destroy: true
     });
 });

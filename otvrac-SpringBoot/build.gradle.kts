@@ -27,6 +27,8 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	implementation("commons-io:commons-io:2.11.0")
 	implementation("org.json:json:20171018")
+	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
+	implementation("org.springframework.boot:spring-boot-starter-security")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
