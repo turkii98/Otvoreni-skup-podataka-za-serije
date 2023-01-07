@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import org.springframework.stereotype.Repository
 
 interface NetflixhboRepository{
-    fun returnJson(): MutableList<Serija>
+    fun returnJson(): MutableList<Any>
     fun returnCsv(): MutableMap<String, MutableList<MutableList<String>>>
     fun addSeries(serijaDTO: SerijaDTO): Boolean
     fun returnCsvFilter(filter:String): MutableMap<String, MutableList<MutableList<String>>>
@@ -23,8 +23,9 @@ interface NetflixhboRepository{
 class NetflixhboRepo (
     private val jdbcTemplate: NamedParameterJdbcTemplate): NetflixhboRepository {
 
-    override fun returnJson(): MutableList<Serija> {
-        val lista = mutableListOf<Serija>()
+    override fun returnJson(): MutableList<Any> {
+        val lista = mutableListOf<Any>()
+
         jdbcTemplate.query(
             "select serija.naziv, prvo_emitiranje, imdb_ocjena::varchar, završeno::varchar, prosjecno_trajanje::varchar, \n" +
                     "zanr.naziv zanr, streamingplatforme.naziv platforma, tematika.naziv tematika,\n" +
@@ -58,8 +59,8 @@ class NetflixhboRepo (
             println(b)
 
             //val c = resultSet.get
-
-
+            lista.add("@context=http://schema.org")
+            lista.add("@type=Serija")
             lista.add(
                 Serija(
                     naziv = resultSet.getString("naziv"),
@@ -75,6 +76,7 @@ class NetflixhboRepo (
                 )
             )
         }
+        println(lista)
         return lista
     }
 

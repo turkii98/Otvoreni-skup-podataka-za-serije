@@ -43,7 +43,7 @@ class NetflixhboController(
 
     @GetMapping("/json")
     @ResponseBody
-    fun getTable():ResponseEntity<ResponseWrap<MutableList<Serija>>> {
+    fun getTable():ResponseEntity<ResponseWrap<MutableList<Any>>> {
         return ResponseEntity(ResponseWrap("OK","Fetched data in JSON",netflixhboRepo.returnJson()), HttpStatus.OK)
     }
 
