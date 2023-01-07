@@ -113,7 +113,8 @@
     $("#testbutton").click(function(event) {
         event.preventDefault();
         $.ajax({
-            url: "http://localhost:8080/json",
+            url: "http://localhost:8080/seriescsv",
+            headers: {"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlhxRHVUUFFfT1J2WHJROW9ocldTRiJ9.eyJpc3MiOiJodHRwczovL2Rldi1yMjZtNmR5dXV3dDNxaTFkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9vcmxhYiIsImlhdCI6MTY3MzEwNDIyNSwiZXhwIjoxNjczMTkwNjI1LCJhenAiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.sGL5FyYYZw-B2fyoiZvZ_XFHBIPmnG2gJMM9ylBvxmNJ_WrYOQXOFbymY9hQxBAjZsCTWy9_EZyr1VBNn_enBKCH7yEEvzktqyfUdrWFzdKNqy376CApy0pEMe5JWpcoEtm2xyCKBp7Rfyhb33bOStVGq1nw4GyBRb2LMKllAdyWNyUbuBwkHJOGj435PFIpVRjsEagP8OzDEsoWxjrHTe3jK9GXI6y21gtB9VqEgbblb0Lgb0MIkSnYNnFv4Z1bh4k6MR3o0gsxwpEcF1ltlPcHRL2PDAD9AZjJjGBN1D6_uZMvYTSyr_lAIAtv1xXr9ejK6H_RZ-Bc4bO3s8ixgQ" },
             type: "GET",
             success: function (dataa) {
                 //ovdje radi nekaj s tim dolaznim podacima
@@ -136,11 +137,13 @@
         event.preventDefault();
         $.ajax({
             url: "http://localhost:8080/json",
+            headers: {"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlhxRHVUUFFfT1J2WHJROW9ocldTRiJ9.eyJpc3MiOiJodHRwczovL2Rldi1yMjZtNmR5dXV3dDNxaTFkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9vcmxhYiIsImlhdCI6MTY3MzEwNDIyNSwiZXhwIjoxNjczMTkwNjI1LCJhenAiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.sGL5FyYYZw-B2fyoiZvZ_XFHBIPmnG2gJMM9ylBvxmNJ_WrYOQXOFbymY9hQxBAjZsCTWy9_EZyr1VBNn_enBKCH7yEEvzktqyfUdrWFzdKNqy376CApy0pEMe5JWpcoEtm2xyCKBp7Rfyhb33bOStVGq1nw4GyBRb2LMKllAdyWNyUbuBwkHJOGj435PFIpVRjsEagP8OzDEsoWxjrHTe3jK9GXI6y21gtB9VqEgbblb0Lgb0MIkSnYNnFv4Z1bh4k6MR3o0gsxwpEcF1ltlPcHRL2PDAD9AZjJjGBN1D6_uZMvYTSyr_lAIAtv1xXr9ejK6H_RZ-Bc4bO3s8ixgQ" },
             type: "GET",
             success: function (dataa) {
                 //ovdje radi nekaj s tim dolaznim podacima
                 //alert(JSON.stringify(dataa))
-                fetch("http://localhost:8080/json")
+                fetch("http://localhost:8080/json", {headers: {"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlhxRHVUUFFfT1J2WHJROW9ocldTRiJ9.eyJpc3MiOiJodHRwczovL2Rldi1yMjZtNmR5dXV3dDNxaTFkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9vcmxhYiIsImlhdCI6MTY3MzEwNDIyNSwiZXhwIjoxNjczMTkwNjI1LCJhenAiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.sGL5FyYYZw-B2fyoiZvZ_XFHBIPmnG2gJMM9ylBvxmNJ_WrYOQXOFbymY9hQxBAjZsCTWy9_EZyr1VBNn_enBKCH7yEEvzktqyfUdrWFzdKNqy376CApy0pEMe5JWpcoEtm2xyCKBp7Rfyhb33bOStVGq1nw4GyBRb2LMKllAdyWNyUbuBwkHJOGj435PFIpVRjsEagP8OzDEsoWxjrHTe3jK9GXI6y21gtB9VqEgbblb0Lgb0MIkSnYNnFv4Z1bh4k6MR3o0gsxwpEcF1ltlPcHRL2PDAD9AZjJjGBN1D6_uZMvYTSyr_lAIAtv1xXr9ejK6H_RZ-Bc4bO3s8ixgQ" },
+            })
                     .then(response => response.blob())
                     .then(blob => {
                     const link = document.createElement("a");
@@ -148,9 +151,10 @@
                     link.download = "serijeSaStreamingPlatformi.json";
                     link.click();
                 })
-                .catch(console.error);
+                
 
-                fetch("http://localhost:8080/series")
+                fetch("http://localhost:8080/series", {headers: {"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlhxRHVUUFFfT1J2WHJROW9ocldTRiJ9.eyJpc3MiOiJodHRwczovL2Rldi1yMjZtNmR5dXV3dDNxaTFkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9vcmxhYiIsImlhdCI6MTY3MzEwNDIyNSwiZXhwIjoxNjczMTkwNjI1LCJhenAiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.sGL5FyYYZw-B2fyoiZvZ_XFHBIPmnG2gJMM9ylBvxmNJ_WrYOQXOFbymY9hQxBAjZsCTWy9_EZyr1VBNn_enBKCH7yEEvzktqyfUdrWFzdKNqy376CApy0pEMe5JWpcoEtm2xyCKBp7Rfyhb33bOStVGq1nw4GyBRb2LMKllAdyWNyUbuBwkHJOGj435PFIpVRjsEagP8OzDEsoWxjrHTe3jK9GXI6y21gtB9VqEgbblb0Lgb0MIkSnYNnFv4Z1bh4k6MR3o0gsxwpEcF1ltlPcHRL2PDAD9AZjJjGBN1D6_uZMvYTSyr_lAIAtv1xXr9ejK6H_RZ-Bc4bO3s8ixgQ" },
+            })
                     .then(response => response.blob())
                     .then(blob => {
                     const link = document.createElement("a");
@@ -158,25 +162,30 @@
                     link.download = "serijeSaStreamingPlatformi.csv";
                     link.click();
                 })
-                .catch(console.error);
+                
                 //aaaaa
                 var temp = JSON.stringify(dataa)
-                console.log(temp)
+                
 
             },
             error: function (e) {
                 console.log("upsić");
-                console.log(e)
+                //console.log(e)
                 
             },
         });
     });
 
-    
+  
+
+
     function fill(data) {
         table = $(document).ready(function () {
         $('#table_id').DataTable({
-        ajax: "http://localhost:8080/seriescsv",
+        ajax: {
+            url: "http://localhost:8080/seriescsv",
+        headers: {"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlhxRHVUUFFfT1J2WHJROW9ocldTRiJ9.eyJpc3MiOiJodHRwczovL2Rldi1yMjZtNmR5dXV3dDNxaTFkLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9vcmxhYiIsImlhdCI6MTY3MzEwNDIyNSwiZXhwIjoxNjczMTkwNjI1LCJhenAiOiJVUE1SQVVYeU1DcWxwQ05RaGhoY3VQSjgxSzYyREZSbSIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.sGL5FyYYZw-B2fyoiZvZ_XFHBIPmnG2gJMM9ylBvxmNJ_WrYOQXOFbymY9hQxBAjZsCTWy9_EZyr1VBNn_enBKCH7yEEvzktqyfUdrWFzdKNqy376CApy0pEMe5JWpcoEtm2xyCKBp7Rfyhb33bOStVGq1nw4GyBRb2LMKllAdyWNyUbuBwkHJOGj435PFIpVRjsEagP8OzDEsoWxjrHTe3jK9GXI6y21gtB9VqEgbblb0Lgb0MIkSnYNnFv4Z1bh4k6MR3o0gsxwpEcF1ltlPcHRL2PDAD9AZjJjGBN1D6_uZMvYTSyr_lAIAtv1xXr9ejK6H_RZ-Bc4bO3s8ixgQ" },
+        },
         destroy: true
     });
 });

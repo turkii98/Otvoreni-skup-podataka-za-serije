@@ -24,7 +24,9 @@ class SecurityConfig {
             }
             authorizeRequests {
                 //authorize(HttpMethod.GET,"/car/{id}", hasAuthority("SCOPE_USER"), hasAuthority("SCOPE_ADMIN"))
-                authorize(HttpMethod.GET,"/stats", authenticated)
+                authorize(HttpMethod.GET,"/seriescsv", authenticated)
+                authorize(HttpMethod.GET,"/json", authenticated)
+                authorize(HttpMethod.GET,"/series", authenticated)
                 authorize("/json", permitAll)
                 //authorize(anyRequest, authenticated)
             }

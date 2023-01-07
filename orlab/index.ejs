@@ -133,8 +133,43 @@
 
     $("#op").click(function(event) {
         event.preventDefault();
-        alert("Morate se prvo prijaviti")
-      });
+        $.ajax({
+            url: "http://localhost:8080/json",
+            type: "GET",
+            success: function (dataa) {
+                //ovdje radi nekaj s tim dolaznim podacima
+                //alert(JSON.stringify(dataa))
+                fetch("http://localhost:8080/json")
+                    .then(response => response.blob())
+                    .then(blob => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "serijeSaStreamingPlatformi.json";
+                    link.click();
+                })
+                .catch(console.error);
+
+                fetch("http://localhost:8080/series")
+                    .then(response => response.blob())
+                    .then(blob => {
+                    const link = document.createElement("a");
+                    link.href = URL.createObjectURL(blob);
+                    link.download = "serijeSaStreamingPlatformi.csv";
+                    link.click();
+                })
+                .catch(console.error);
+                //aaaaa
+                var temp = JSON.stringify(dataa)
+                console.log(temp)
+
+            },
+            error: function (e) {
+                console.log("upsić");
+                console.log(e)
+                
+            },
+        });
+    });
 
 
 

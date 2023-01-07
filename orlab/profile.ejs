@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <button onclick="details()">Click for details</button>
     <a class="mp" href="/">Povratak na glavnu stranicu</a>
     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
     <a class="logout" href="/logout">Odjava</a>
@@ -21,4 +22,19 @@
     <% } %>
     
     <pre class="block bg-gray-300 p-4 text-sm overflow-scroll"><%= userProfile %></pre>
+    <pre class="block bg-gray-300 p-4 text-sm overflow-scroll"><%= a %></pre>
+    <script>
+        function details(){
+            //alert("e")
+            var options = { method: 'POST',
+        url: 'https://dev-r26m6dyuuwt3qi1d.us.auth0.com/oauth/token',
+        headers: { 'content-type': 'application/json' },
+        body: '{"client_id":"UPMRAUXyMCqlpCNQhhhcuPJ81K62DFRm","client_secret":"hf8rgvNi1Aqv1PAVUfyJINi0Hzhp66-8DWHjY13Rx60qCtVTYrfY2DNHer6pgdV3","audience":"https://orlab","grant_type":"client_credentials"}' };
+
+            var req = localStorage.getItem("token")
+            console.log(req)
+
+        
+    }
+    </script>
 </body>

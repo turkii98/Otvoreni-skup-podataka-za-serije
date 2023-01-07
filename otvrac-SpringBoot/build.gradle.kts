@@ -29,6 +29,9 @@ dependencies {
 	implementation("org.json:json:20171018")
 	implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
 	implementation("org.springframework.boot:spring-boot-starter-security")
+	implementation("org.springframework.security:spring-security-oauth2-resource-server")
+	implementation("org.springframework.security:spring-security-oauth2-jose")
+	implementation("org.springframework.security:spring-security-config")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
